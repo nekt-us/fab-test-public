@@ -1,0 +1,17 @@
+name: fab-live
+on:
+  workflow_dispatch:
+    inputs:
+      seconds:
+        description: Seconds to sleep
+        default: "1"
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "fab live run ${{ github.run_id }}" > live.txt && sleep "${{ inputs.seconds }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fab-live
+          path: live.txt
+          retention-days: 1
