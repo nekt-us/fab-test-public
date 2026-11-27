@@ -1,0 +1,6 @@
+{
+  "name": "fab-live-vulnerable-fixture",
+  "private": true,
+  "description": "Fab live tests: a known-vulnerable dependency so Dependabot raises an alert. Never installed or built.",
+  "dependencies": { "lodash": "4.17.20" }
+}
